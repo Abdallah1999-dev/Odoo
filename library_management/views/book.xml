@@ -1,0 +1,68 @@
+<odoo>
+    <record id="book_view_list" model="ir.ui.view">
+        <field name="name">book.view.list</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <list string="Books" >
+                <field name="name"/>
+                <field name="author_id"/>
+                <field name="isbn"/>
+                <field name="category_id"/>
+                <field name="copies_total"/>
+                <field name="copies_available"/>
+                <field name="published_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="book_view_form" model="ir.ui.view">
+        <field name="name">book.view.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Books">
+                <header>
+                    <!-- Buttons and statusbar go here -->
+                </header>
+                <sheet>
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
+                        <!-- Big title field (like res.partner name) -->
+                        <div class="oe_title">
+                              <h1>
+                                  <field name="name" placeholder="Book Name"/>
+                              </h1>
+                        </div>
+                    <group>
+                        <group>
+                            <field name="author_id"/>
+                            <field name="isbn"/>
+                        </group>
+                        <group>
+                            <field name="category_id"/>
+                            <field name="copies_total"/>
+                            <field name="copies_available"/>
+                            <field name="published_date"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter class="oe_chatter">
+                  <field name="message_follower_ids"/>
+                  <field name="activity_ids"/>
+                  <field name="message_ids"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <record id="book_action" model="ir.actions.act_window">
+        <field name="name">Book</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="library_management_menu_assets_book"
+              name="Book"
+              parent="library_management_menu_assets"
+              action="book_action"
+              sequence="1"
+    />
+</odoo>

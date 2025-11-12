@@ -6,11 +6,10 @@
             <list string="Books" >
                 <field name="name"/>
                 <field name="author_id"/>
-                <field name="isbn"/>
                 <field name="category_id"/>
                 <field name="copies_total"/>
                 <field name="copies_available"/>
-                <field name="published_date"/>
+                <field name="published_year"/>
             </list>
         </field>
     </record>
@@ -34,13 +33,14 @@
                     <group>
                         <group>
                             <field name="author_id"/>
-                            <field name="isbn"/>
+                            <field name="description"/>
                         </group>
                         <group>
-                            <field name="category_id" widget="many2many_tags"/>
+                            <field name="category_id" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             <field name="copies_total"/>
                             <field name="copies_available"/>
-                            <field name="published_date"/>
+                            <field name="published_year"/>
+
                         </group>
                     </group>
                 </sheet>

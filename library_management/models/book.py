@@ -9,7 +9,7 @@ class Book(models.Model):
     image_1920 = fields.Image()
     author_id = fields.Many2one('library.author')
     isbn = fields.Char()
-    category_id = fields.Char()
+    category_id = fields.Many2many('library.book.tag')
     copies_total = fields.Integer(required=True)
     copies_available = fields.Integer()
     published_date = fields.Date()

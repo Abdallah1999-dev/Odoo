@@ -11,6 +11,7 @@
         'views/menus.xml',
         'views/book.xml',
         'views/author.xml',
+        'views/book_tag.xml',
     ],
     'depends': ['base','mail'],
 }

@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 library_book_access,library_book_access,model_library_book,,1,1,1,1
+library_book_tag_access,library_book_tag_access,model_library_book_tag,,1,1,1,1
 library_author_access,library_author_access,model_library_author,,1,1,1,1
